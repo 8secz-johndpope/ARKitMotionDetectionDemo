@@ -9,19 +9,18 @@
 /* Begin PBXBuildFile section */
 		0C0AADE42290B23100E0502A /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0AADE32290B23100E0502A /* MessageLabel.swift */; };
 		0C71C056228FA198003621C4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C71C055228FA198003621C4 /* Utilities.swift */; };
-		0C8C7868228387D2006A6EE1 /* character in Resources */ = {isa = PBXBuildFile; fileRef = 0C8C7867228387D2006A6EE1 /* character */; };
 		2F60E1DB22631E0F00357E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60E1DA22631E0F00357E98 /* AppDelegate.swift */; };
 		2F60E1DD22631E0F00357E98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60E1DC22631E0F00357E98 /* ViewController.swift */; };
 		2F60E1E222631E0F00357E98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F60E1E022631E0F00357E98 /* Main.storyboard */; };
 		2F60E1E422631E0F00357E98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F60E1E322631E0F00357E98 /* Assets.xcassets */; };
 		2F60E1E722631E0F00357E98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F60E1E522631E0F00357E98 /* LaunchScreen.storyboard */; };
 		718E55BC2289F8FF00A9B13B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 718E55BB2289F8FF00A9B13B /* README.md */; };
+		84253AF722CF9BF5005C4CBF /* robot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 84253AF622CF9BF5005C4CBF /* robot.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C0AADE32290B23100E0502A /* MessageLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		0C71C055228FA198003621C4 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		0C8C7867228387D2006A6EE1 /* character */ = {isa = PBXFileReference; lastKnownFileType = folder; path = character; sourceTree = "<group>"; };
 		2F60E1D822631E0E00357E98 /* BodyDetection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyDetection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F60E1DA22631E0F00357E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F60E1DC22631E0F00357E98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,8 +29,10 @@
 		2F60E1E622631E0F00357E98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F60E1EB22631E0F00357E98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		718E55BB2289F8FF00A9B13B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		9EC825E09EC7F7A000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
-		9EC97D409ECA3D7000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
+		840FC4BB22CF99370085BD26 /* BodyDetection */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BodyDetection; sourceTree = "<group>"; };
+		84253AF622CF9BF5005C4CBF /* robot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = robot.usdz; sourceTree = "<group>"; };
+		9EC825E09EC7F7A000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		9EC97D409ECA3D7000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +70,10 @@
 			children = (
 				2F60E1DA22631E0F00357E98 /* AppDelegate.swift */,
 				2F60E1DC22631E0F00357E98 /* ViewController.swift */,
+				84253AF622CF9BF5005C4CBF /* robot.usdz */,
 				0C0AADE32290B23100E0502A /* MessageLabel.swift */,
 				0C71C055228FA198003621C4 /* Utilities.swift */,
-				0C8C7867228387D2006A6EE1 /* character */,
+				840FC4BB22CF99370085BD26 /* BodyDetection */,
 				2F60E1E022631E0F00357E98 /* Main.storyboard */,
 				2F60E1E322631E0F00357E98 /* Assets.xcassets */,
 				2F60E1E522631E0F00357E98 /* LaunchScreen.storyboard */,
@@ -93,7 +95,6 @@
 			children = (
 				9EC97D409ECA3D7000000001 /* LICENSE.txt */,
 			);
-			name = LICENSE;
 			path = LICENSE;
 			sourceTree = "<group>";
 		};
@@ -107,7 +108,6 @@
 				2F60E1D422631E0E00357E98 /* Sources */,
 				2F60E1D522631E0E00357E98 /* Frameworks */,
 				2F60E1D622631E0E00357E98 /* Resources */,
-				71D3424E228B14010005E04E,
 			);
 			buildRules = (
 			);
@@ -157,8 +157,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8C7868228387D2006A6EE1 /* character in Resources */,
 				2F60E1E722631E0F00357E98 /* LaunchScreen.storyboard in Resources */,
+				84253AF722CF9BF5005C4CBF /* robot.usdz in Resources */,
 				718E55BC2289F8FF00A9B13B /* README.md in Resources */,
 				2F60E1E422631E0F00357E98 /* Assets.xcassets in Resources */,
 				2F60E1E222631E0F00357E98 /* Main.storyboard in Resources */,
@@ -328,7 +328,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5W5PQ377QT;
 				ENABLE_RCPROJECT_COMPILATION = YES;
 				ENABLE_USDZ_COMPILATION = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/BodyDetection/Info.plist";
@@ -353,7 +353,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5W5PQ377QT;
 				ENABLE_RCPROJECT_COMPILATION = YES;
 				ENABLE_USDZ_COMPILATION = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/BodyDetection/Info.plist";

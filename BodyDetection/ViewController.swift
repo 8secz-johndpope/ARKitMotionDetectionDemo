@@ -40,39 +40,41 @@ class ViewController: UIViewController, ARSessionDelegate {
         
         arView.scene.addAnchor(characterAnchor)
         
-        // Asynchronously load the 3D character.
-        _ = Entity.loadBodyTrackedAsync(named: "character/robot").sink(receiveCompletion: { completion in
-            if case let .failure(error) = completion {
-                print("Error: Unable to load model: \(error.localizedDescription)")
-            }
-        }, receiveValue: { (character: Entity) in
-            if let character = character as? BodyTrackedEntity {
-                // Scale the character to human size
-                character.scale = [1.0, 1.0, 1.0]
-                self.character = character
-            } else {
-                print("Error: Unable to load model as BodyTrackedEntity")
-            }
-        })
+        // load the 3D character.
+        do {
+            try character = Entity.loadBodyTracked(named: "robot")
+            
+        } catch {
+            print("fail to load character")
+            print(error)
+        }
+        
     }
     
     func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
         for anchor in anchors {
             guard let bodyAnchor = anchor as? ARBodyAnchor else { continue }
-            
+
             // Update the position of the character anchor's position.
             let bodyPosition = simd_make_float3(bodyAnchor.transform.columns.3)
             characterAnchor.position = bodyPosition + characterOffset
             // Also copy over the rotation of the body anchor, because the skeleton's pose
             // in the world is relative to the body anchor's rotation.
             characterAnchor.orientation = Transform(matrix: bodyAnchor.transform).rotation
-   
-            if let character = character, character.parent == nil {
-                // Attach the character to its anchor as soon as
-                // 1. the body anchor was detected and
-                // 2. the character was loaded.
-                characterAnchor.addChild(character)
+            
+            guard let character = character else {
+                print("\n\ncharacter not a BodyTrackedEntity!\n\n")
+                return
             }
+            characterAnchor.addChild(character)
+            print("\n\n Successfully added character as the child!\n\n")
+            
+            let jointNames = bodyAnchor.skeleton.definition.jointNames
+            for jointName in jointNames {
+                let jointModelTransform = bodyAnchor.skeleton.modelTransform(for: ARSkeleton.JointName(rawValue: jointName))
+                print("\(jointName) , \(jointModelTransform ?? simd_float4x4(0.0)) \n")
+            }
+
         }
     }
 }
