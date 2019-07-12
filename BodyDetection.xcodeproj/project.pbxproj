@@ -16,6 +16,7 @@
 		2F60E1E722631E0F00357E98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F60E1E522631E0F00357E98 /* LaunchScreen.storyboard */; };
 		718E55BC2289F8FF00A9B13B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 718E55BB2289F8FF00A9B13B /* README.md */; };
 		84253AF722CF9BF5005C4CBF /* robot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 84253AF622CF9BF5005C4CBF /* robot.usdz */; };
+		84488AA822D8B4A900336375 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84488AA722D8B4A900336375 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		718E55BB2289F8FF00A9B13B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		840FC4BB22CF99370085BD26 /* BodyDetection */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BodyDetection; sourceTree = "<group>"; };
 		84253AF622CF9BF5005C4CBF /* robot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = robot.usdz; sourceTree = "<group>"; };
+		84488AA722D8B4A900336375 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9EC825E09EC7F7A000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		9EC97D409ECA3D7000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +77,7 @@
 				0C71C055228FA198003621C4 /* Utilities.swift */,
 				840FC4BB22CF99370085BD26 /* BodyDetection */,
 				2F60E1E022631E0F00357E98 /* Main.storyboard */,
+				84488AA722D8B4A900336375 /* HomeViewController.swift */,
 				2F60E1E322631E0F00357E98 /* Assets.xcassets */,
 				2F60E1E522631E0F00357E98 /* LaunchScreen.storyboard */,
 				2F60E1EB22631E0F00357E98 /* Info.plist */,
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84488AA822D8B4A900336375 /* HomeViewController.swift in Sources */,
 				0C71C056228FA198003621C4 /* Utilities.swift in Sources */,
 				2F60E1DD22631E0F00357E98 /* ViewController.swift in Sources */,
 				0C0AADE42290B23100E0502A /* MessageLabel.swift in Sources */,

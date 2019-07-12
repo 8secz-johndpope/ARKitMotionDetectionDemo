@@ -13,6 +13,7 @@ class ViewController: UIViewController, ARSessionDelegate {
 
     @IBOutlet var arView: ARView!
     @IBOutlet weak var messageLabel: MessageLabel!
+    @IBOutlet private weak var OutputDisplay: UILabel!
     
     // The 3D character to display.
     var character: BodyTrackedEntity?
@@ -40,41 +41,27 @@ class ViewController: UIViewController, ARSessionDelegate {
         
         arView.scene.addAnchor(characterAnchor)
         
-        // load the 3D character.
-        do {
-            try character = Entity.loadBodyTracked(named: "robot")
-            
-        } catch {
-            print("fail to load character")
-            print(error)
-        }
-        
     }
     
     func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
         for anchor in anchors {
             guard let bodyAnchor = anchor as? ARBodyAnchor else { continue }
-
-            // Update the position of the character anchor's position.
-            let bodyPosition = simd_make_float3(bodyAnchor.transform.columns.3)
-            characterAnchor.position = bodyPosition + characterOffset
-            // Also copy over the rotation of the body anchor, because the skeleton's pose
-            // in the world is relative to the body anchor's rotation.
-            characterAnchor.orientation = Transform(matrix: bodyAnchor.transform).rotation
-            
-            guard let character = character else {
-                print("\n\ncharacter not a BodyTrackedEntity!\n\n")
-                return
-            }
-            characterAnchor.addChild(character)
-            print("\n\n Successfully added character as the child!\n\n")
             
             let jointNames = bodyAnchor.skeleton.definition.jointNames
+            
+            let frame = session.currentFrame
+            let body = frame?.detectedBody
+            let skeleton2D = body?.skeleton
+            //let definition = skeleton2D?.definition
             for jointName in jointNames {
-                let jointModelTransform = bodyAnchor.skeleton.modelTransform(for: ARSkeleton.JointName(rawValue: jointName))
-                print("\(jointName) , \(jointModelTransform ?? simd_float4x4(0.0)) \n")
+                let joint2dLandmark = skeleton2D?.landmark(for: ARSkeleton.JointName(rawValue: jointName))
+                if jointName == "head_joint" {
+                    OutputDisplay.text = "\(jointName), \(String(describing: joint2dLandmark))"
+                }
+                print("\(jointName), \(String(describing: joint2dLandmark))")
             }
 
         }
+        
     }
 }
